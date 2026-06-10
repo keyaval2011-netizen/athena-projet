@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none">
+  <!-- Halo -->
+  <circle cx="40" cy="40" r="36" fill="rgba(66,199,255,0.08)" stroke="rgba(66,199,255,0.18)" stroke-width="1"/>
+  <!-- Feuille/document -->
+  <path d="M22 20 L22 62 L54 62 L54 28 L46 20 Z" stroke="#42c7ff" stroke-width="2" fill="rgba(66,199,255,0.07)" stroke-linejoin="round"/>
+  <!-- Coin plié -->
+  <path d="M46 20 L46 28 L54 28" stroke="#42c7ff" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <!-- Lignes de texte -->
+  <line x1="28" y1="35" x2="48" y2="35" stroke="#42c7ff" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="28" y1="41" x2="48" y2="41" stroke="#42c7ff" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="28" y1="47" x2="40" y2="47" stroke="#42c7ff" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Grande coche validation -->
+  <circle cx="46" cy="52" r="9" fill="rgba(85,230,157,0.15)" stroke="#55e69d" stroke-width="2"/>
+  <path d="M41.5 52 L44.5 55 L50.5 48" stroke="#55e69d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

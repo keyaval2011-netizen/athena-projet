@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none">
+  <!-- Halo -->
+  <circle cx="40" cy="40" r="36" fill="rgba(66,199,255,0.08)" stroke="rgba(66,199,255,0.18)" stroke-width="1"/>
+  <!-- Document principal -->
+  <path d="M24 18 L24 56 L52 56 L52 26 L44 18 Z" stroke="#42c7ff" stroke-width="2" fill="rgba(66,199,255,0.07)" stroke-linejoin="round"/>
+  <!-- Coin plié -->
+  <path d="M44 18 L44 26 L52 26" stroke="#42c7ff" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <!-- Lignes PDF -->
+  <line x1="30" y1="32" x2="46" y2="32" stroke="#42c7ff" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="30" y1="38" x2="46" y2="38" stroke="#42c7ff" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="30" y1="44" x2="40" y2="44" stroke="#42c7ff" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Flèche vers le bas (import) -->
+  <line x1="40" y1="56" x2="40" y2="65" stroke="#42c7ff" stroke-width="2.2" stroke-linecap="round"/>
+  <polyline points="34,61 40,67 46,61" stroke="#42c7ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Base de réception -->
+  <line x1="32" y1="68" x2="48" y2="68" stroke="#42c7ff" stroke-width="2" stroke-linecap="round"/>
+</svg>

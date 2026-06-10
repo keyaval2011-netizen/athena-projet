@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none">
+  <!-- Halo -->
+  <circle cx="40" cy="40" r="36" fill="rgba(66,199,255,0.08)" stroke="rgba(66,199,255,0.18)" stroke-width="1"/>
+  <!-- Cahier/carnet -->
+  <rect x="22" y="18" width="32" height="42" rx="3" stroke="#42c7ff" stroke-width="2" fill="rgba(66,199,255,0.07)"/>
+  <!-- Spirale gauche -->
+  <line x1="22" y1="18" x2="22" y2="60" stroke="#42c7ff" stroke-width="2"/>
+  <circle cx="22" cy="24" r="2.5" fill="none" stroke="#42c7ff" stroke-width="1.5"/>
+  <circle cx="22" cy="32" r="2.5" fill="none" stroke="#42c7ff" stroke-width="1.5"/>
+  <circle cx="22" cy="40" r="2.5" fill="none" stroke="#42c7ff" stroke-width="1.5"/>
+  <circle cx="22" cy="48" r="2.5" fill="none" stroke="#42c7ff" stroke-width="1.5"/>
+  <circle cx="22" cy="56" r="2.5" fill="none" stroke="#42c7ff" stroke-width="1.5"/>
+  <!-- Lignes de texte -->
+  <line x1="28" y1="28" x2="48" y2="28" stroke="#42c7ff" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="28" y1="34" x2="50" y2="34" stroke="#42c7ff" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="28" y1="40" x2="44" y2="40" stroke="#42c7ff" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- Coche sur dernière ligne -->
+  <path d="M28 47 L31 50 L36 44" stroke="#55e69d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="40" y1="47" x2="50" y2="47" stroke="#42c7ff" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+</svg>

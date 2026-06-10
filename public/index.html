@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATHENA - Assistant pédagogique intelligent</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand" onclick="showPublicPage('home')">
+      <img src="assets/logo-athena.png" alt="Logo ATHENA" />
+      <span>ATHENA</span>
+    </div>
+    <nav class="top-actions">
+      <button class="nav-link" onclick="showPublicPage('about')">À propos</button>
+      <button class="nav-link" onclick="showPublicPage('features')">Fonctionnalités</button>
+      <button class="nav-link" onclick="showPublicPage('privacy')">Confidentialité</button>
+      <button class="nav-link" onclick="showPublicPage('limits')">Limites</button>
+      <button class="btn soft" id="themeToggleBtn" onclick="toggleTheme()">Mode clair</button>
+      <button id="authButton" class="btn primary" onclick="openModal('loginModal')">Connexion</button>
+    </nav>
+  </header>
+
+  <main id="publicSite" class="public-site">
+    <section id="home" class="public-page active hero-section">
+      <div class="hero-background" aria-hidden="true"></div>
+      <div class="public-container hero-layout">
+        <div class="hero-text">
+          <p class="kicker">Éducatif • Intelligent • Accessible</p>
+          <h1>ATHENA, ton assistant intelligent pour comprendre et réussir</h1>
+          <p class="lead">
+            ATHENA propose une aide pédagogique progressive à travers des explications simples, des exercices, des évaluations et des corrections adaptées au niveau de l’élève. L’application accompagne l’utilisateur étape par étape afin de l’aider à mieux comprendre ses cours et à renforcer ses connaissances.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn primary" onclick="enterApp()">Tester ATHENA</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="public-page home-section about-section">
+      <div class="public-container about-layout">
+        <div class="section-copy">
+          <span class="section-mark" aria-hidden="true"></span>
+          <h2>À propos d’ATHENA</h2>
+          <p class="section-intro">
+            ATHENA est un assistant pédagogique moderne qui aide les élèves à mieux comprendre leurs cours, à s’exercer et à progresser avec un accompagnement adapté à leur rythme.
+          </p>
+          <div class="about-points">
+            <article class="about-point">
+              <span class="point-dot" aria-hidden="true"></span>
+              <div>
+                <h3>Objectif</h3>
+                <p>L’objectif premier d’ATHENA est de rendre l’apprentissage plus accessible et plus personnalisé en proposant aux élèves un accompagnement pédagogique adapté à leurs besoins, à leur rythme et à leurs difficultés.</p>
+              </div>
+            </article>
+            <article class="about-point">
+              <span class="point-dot" aria-hidden="true"></span>
+              <div>
+                <h3>Public cible</h3>
+                <p>ATHENA s’adresse principalement aux élèves du fondamental et du secondaire qui souhaitent mieux comprendre leurs cours, réviser plus efficacement ou recevoir un appui lorsqu’ils rencontrent des difficultés. L’application peut aussi être utilisée à un niveau plus avancé, mais son objectif principal reste l’accompagnement scolaire progressif.</p>
+              </div>
+            </article>
+            <article class="about-point">
+              <span class="point-dot" aria-hidden="true"></span>
+              <div>
+                <h3>Utilité</h3>
+                <p>ATHENA aide l’élève à comprendre les notions importantes, à s’exercer progressivement et à améliorer ses réponses grâce à des corrections adaptées.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <aside class="section-portrait-card">
+          <img src="assets/What_I_Wanted_From_The_Start.png" alt="Livres et diplôme représentant l’accompagnement scolaire d’ATHENA" />
+        </aside>
+      </div>
+    </section>
+
+    <section id="features" class="public-page home-section features-section">
+      <div class="public-container">
+        <div class="section-heading">
+          <span class="section-mark" aria-hidden="true"></span>
+          <h2>Fonctionnalités principales</h2>
+          <p class="section-intro">ATHENA met à disposition des outils pédagogiques clairs et structurés pour accompagner chaque élève dans sa progression.</p>
+        </div>
+        <div class="feature-grid modern-feature-grid">
+          <article class="feature-card"><img src="assets/icon-expliquer.svg" alt="" /><h3>Expliquer</h3><p>ATHENA explique une leçon avec une définition, un exemple et une application.</p></article>
+          <article class="feature-card"><img src="assets/icon-simplifier.svg" alt="" /><h3>Simplifier</h3><p>ATHENA reformule une notion difficile avec des mots plus simples.</p></article>
+          <article class="feature-card"><img src="assets/icon-corriger.svg" alt="" /><h3>Corriger</h3><p>ATHENA analyse une réponse, signale les erreurs et propose une correction modèle.</p></article>
+          <article class="feature-card"><img src="assets/icon-exercices.svg" alt="" /><h3>Exercices</h3><p>ATHENA propose des exercices adaptés au niveau de l’élève afin de l’aider à pratiquer, vérifier sa compréhension et progresser étape par étape.</p></article>
+          <article class="feature-card"><img src="assets/icon-evaluations.svg" alt="" /><h3>Évaluations</h3><p>ATHENA peut proposer des évaluations simples et structurées pour aider l’élève à mesurer ses progrès et à identifier les notions qu’il doit renforcer.</p></article>
+          <article class="feature-card"><img src="assets/icon-fichiers.svg" alt="" /><h3>Fichiers</h3><p>ATHENA peut analyser un fichier texte, PDF ou DOCX pour en extraire les notions importantes.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" class="public-page home-section trust-section">
+      <div class="public-container">
+        <div class="section-heading">
+          <span class="section-mark" aria-hidden="true"></span>
+          <h2>Confidentialité et limites</h2>
+          <p class="section-intro">ATHENA place la confiance, la transparence et l’accompagnement responsable au cœur de son fonctionnement.</p>
+        </div>
+        <div class="trust-grid">
+          <article class="trust-card">
+            <img src="assets/confidentialite.png" alt="Protection et confidentialité des données" />
+            <div class="trust-card-body">
+              <h3>Confidentialité</h3>
+              <p>ATHENA peut conserver certaines informations liées au compte de l’utilisateur afin d’améliorer l’accompagnement pédagogique : anciennes discussions, matières travaillées, niveau scolaire ou difficultés fréquentes. Ces données servent uniquement à personnaliser l’aide proposée.</p>
+            </div>
+          </article>
+          <article id="limits" class="trust-card">
+            <img src="assets/limits-ai.png" alt="Intelligence artificielle et accompagnement responsable" />
+            <div class="trust-card-body">
+              <h3>Limites</h3>
+              <p>ATHENA est un outil d’accompagnement pédagogique. Elle ne remplace pas le rôle d’un professeur, mais elle peut aider l’élève à mieux comprendre, s’exercer et progresser à son rythme. Ses réponses doivent toujours être utilisées avec réflexion et vérification.</p>
+
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main id="appShell" class="hidden app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-title">
+        <img src="assets/logo-athena.png" alt="Logo ATHENA" />
+        <div>
+          <h2>ATHENA</h2>
+          <p>Apprentissage</p>
+        </div>
+      </div>
+
+      <button class="side-button" onclick="newDiscussion()">+ Nouvelle discussion</button>
+
+      <label>Langue de réponse</label>
+      <select id="language">
+        <option selected>Français</option>
+        <option>Anglais</option>
+        <option>Espagnol</option>
+        <option>Chinois</option>
+        <option>Hindi</option>
+        <option>Arabe</option>
+        <option>Bengali</option>
+        <option>Russe</option>
+        <option>Portugais</option>
+        <option>Ourdou</option>
+        <option>Créole haïtien</option>
+      </select>
+
+      <label>Niveau scolaire</label>
+      <select id="level">
+        <option>Fondamental 1 : 1re à 4e année</option>
+        <option>Fondamental 2 : 5e à 6e année</option>
+        <option selected>Fondamental 3 : 7e à 9e année</option>
+        <option>Secondaire I</option>
+        <option>Secondaire II</option>
+        <option>Secondaire III</option>
+        <option>Secondaire IV</option>
+        <option>Faculté / Université</option>
+      </select>
+
+      <label>Classe précise</label>
+      <input id="grade" value="9e année fondamentale" />
+
+      <div class="hidden">
+        <label>Performance récente</label>
+        <select id="performance">
+          <option>Faible : moins de 50%</option>
+          <option selected>Moyenne : 50% à 79%</option>
+          <option>Bonne : 80% ou plus</option>
+        </select>
+
+        <div class="status-card" id="apiStatus">Vérification du mode IA...</div>
+      </div>
+
+      <!-- Resources section removed from sidebar display per request. showResources() still available in app.js. -->
+
+      <div class="side-section">
+        <h3>Récentes discussions</h3>
+        <div id="historyList" class="history-list"></div>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <header class="workspace-header">
+        <div class="workspace-actions">
+          <button id="logoutBtn" class="btn soft hidden" onclick="logout()">Déconnexion</button>
+          <button class="user-chip" onclick="returnToPublicPage('home')">Retour accueil</button>
+        </div>
+      </header>
+
+      <section class="welcome">
+        <h1>Bonjour, je suis ATHENA</h1>
+        <p>Écris ta demande, je t’accompagne étape par étape.</p>
+      </section>
+
+      <section id="composerMenu" class="composer-menu hidden">
+        <button type="button" class="composer-menu-item" onclick="document.getElementById('fileInput').click(); toggleComposerMenu(false);">Importer un fichier</button>
+      </section>
+
+      <section class="composer">
+        <button type="button" class="composer-plus" aria-label="Options" onclick="toggleComposerMenu()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <button type="button" class="composer-mic" aria-label="Dictée vocale" onclick="startVoiceDictation()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V4a3 3 0 0 1 3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v4"/><path d="M8 23h8"/></svg>
+        </button>
+        <button type="button" class="composer-voice" aria-label="Chat vocal" onclick="startVoiceChat()">
+          <span class="voice-mode-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <textarea id="messageInput" placeholder="Pose ta question à ATHENA..."></textarea>
+        <button onclick="sendMessage()">➤</button>
+      </section>
+
+      <section id="voicePanel" class="voice-panel hidden">
+        <div class="voice-panel-status" id="voiceStatus">Dictée en attente...</div>
+        <div class="voice-preview" id="voicePreview"></div>
+        <div class="voice-actions">
+          <button type="button" class="btn soft compact" onclick="cancelVoiceDictation()">Annuler</button>
+          <button type="button" class="btn cyan compact" onclick="confirmVoiceDictation()">Valider</button>
+        </div>
+      </section>
+
+      <section id="voiceChatPanel" class="voice-panel hidden">
+        <div class="voice-panel-status" id="voiceChatStatus">Chat vocal activé. ATHENA t’écoute...</div>
+        <div class="voice-preview" id="voiceChatPreview"></div>
+        <div class="voice-actions">
+          <button type="button" class="btn soft compact" onclick="stopVoiceChat()">Arrêter</button>
+        </div>
+      </section>
+
+      <section class="compact-options">
+        <div class="compact-field">
+          <label>Matière</label>
+          <div class="subject-dropdown" id="subjectDropdown">
+            <input type="hidden" id="subject" value="Mathématiques" />
+            <button type="button" class="subject-dropdown-trigger" id="subjectTrigger" aria-haspopup="tree" aria-expanded="false" aria-controls="subjectMenu">
+              <span id="subjectTriggerText">Mathématiques</span>
+              <span class="subject-dropdown-arrow">▾</span>
+            </button>
+            <div class="subject-dropdown-menu hidden" id="subjectMenu" role="tree" aria-label="Matière">
+              <div class="subject-group" data-category="mathematiques">
+                <button type="button" class="subject-category-button" data-category="mathematiques" aria-expanded="false">
+                  <span>Mathématiques</span>
+                  <span class="subject-chevron">›</span>
+                </button>
+                <div class="subject-submenu hidden" data-category="mathematiques">
+                  <button type="button" class="subject-option active" data-subject="Mathématiques" role="treeitem" aria-selected="true">Mathématiques</button>
+                  <button type="button" class="subject-option" data-subject="Géométrie" role="treeitem" aria-selected="false">Géométrie</button>
+                  <button type="button" class="subject-option" data-subject="Calcul" role="treeitem" aria-selected="false">Calcul</button>
+                  <button type="button" class="subject-option" data-subject="Algèbre" role="treeitem" aria-selected="false">Algèbre</button>
+                  <button type="button" class="subject-option" data-subject="Arithmétique" role="treeitem" aria-selected="false">Arithmétique</button>
+                  <button type="button" class="subject-option" data-subject="Statistiques" role="treeitem" aria-selected="false">Statistiques</button>
+                  <button type="button" class="subject-option" data-subject="Probabilités" role="treeitem" aria-selected="false">Probabilités</button>
+                  <button type="button" class="subject-option" data-subject="Logique mathématique" role="treeitem" aria-selected="false">Logique mathématique</button>
+                </div>
+              </div>
+
+              <div class="subject-group" data-category="langues">
+                <button type="button" class="subject-category-button" data-category="langues" aria-expanded="false">
+                  <span>Langues</span>
+                  <span class="subject-chevron">›</span>
+                </button>
+                <div class="subject-submenu hidden" data-category="langues">
+                  <button type="button" class="subject-option" data-subject="Français" role="treeitem" aria-selected="false">Français</button>
+                  <button type="button" class="subject-option" data-subject="Créole haïtien" role="treeitem" aria-selected="false">Créole haïtien</button>
+                  <button type="button" class="subject-option" data-subject="Anglais" role="treeitem" aria-selected="false">Anglais</button>
+                  <button type="button" class="subject-option" data-subject="Espagnol" role="treeitem" aria-selected="false">Espagnol</button>
+                </div>
+              </div>
+
+              <div class="subject-group" data-category="litterature">
+                <button type="button" class="subject-category-button" data-category="litterature" aria-expanded="false">
+                  <span>Littérature et Expression</span>
+                  <span class="subject-chevron">›</span>
+                </button>
+                <div class="subject-submenu hidden" data-category="litterature">
+                  <button type="button" class="subject-option" data-subject="Littérature française" role="treeitem" aria-selected="false">Littérature française</button>
+                  <button type="button" class="subject-option" data-subject="Littérature haïtienne" role="treeitem" aria-selected="false">Littérature haïtienne</button>
+                  <button type="button" class="subject-option" data-subject="Lecture" role="treeitem" aria-selected="false">Lecture</button>
+                  <button type="button" class="subject-option" data-subject="Rédaction" role="treeitem" aria-selected="false">Rédaction</button>
+                  <button type="button" class="subject-option" data-subject="Dissertation" role="treeitem" aria-selected="false">Dissertation</button>
+                  <button type="button" class="subject-option" data-subject="Analyse de texte" role="treeitem" aria-selected="false">Analyse de texte</button>
+                </div>
+              </div>
+
+              <div class="subject-group" data-category="sciences">
+                <button type="button" class="subject-category-button" data-category="sciences" aria-expanded="false">
+                  <span>Sciences expérimentales</span>
+                  <span class="subject-chevron">›</span>
+                </button>
+                <div class="subject-submenu hidden" data-category="sciences">
+                  <button type="button" class="subject-option" data-subject="Sciences physiques" role="treeitem" aria-selected="false">Sciences physiques</button>
+                  <button type="button" class="subject-option" data-subject="Physique" role="treeitem" aria-selected="false">Physique</button>
+                  <button type="button" class="subject-option" data-subject="Chimie" role="treeitem" aria-selected="false">Chimie</button>
+                  <button type="button" class="subject-option" data-subject="SVT" role="treeitem" aria-selected="false">SVT</button>
+                  <button type="button" class="subject-option" data-subject="Biologie" role="treeitem" aria-selected="false">Biologie</button>
+                  <button type="button" class="subject-option" data-subject="Géologie" role="treeitem" aria-selected="false">Géologie</button>
+                  <button type="button" class="subject-option" data-subject="Environnement" role="treeitem" aria-selected="false">Environnement</button>
+                </div>
+              </div>
+
+              <div class="subject-group" data-category="societe">
+                <button type="button" class="subject-category-button" data-category="societe" aria-expanded="false">
+                  <span>Individus et Sociétés</span>
+                  <span class="subject-chevron">›</span>
+                </button>
+                <div class="subject-submenu hidden" data-category="societe">
+                  <button type="button" class="subject-option" data-subject="Histoire" role="treeitem" aria-selected="false">Histoire</button>
+                  <button type="button" class="subject-option" data-subject="Géographie" role="treeitem" aria-selected="false">Géographie</button>
+                  <button type="button" class="subject-option" data-subject="Éducation civique" role="treeitem" aria-selected="false">Éducation civique</button>
+                  <button type="button" class="subject-option" data-subject="Société" role="treeitem" aria-selected="false">Société</button>
+                  <button type="button" class="subject-option" data-subject="Culture générale" role="treeitem" aria-selected="false">Culture générale</button>
+                </div>
+              </div>
+
+              <div class="subject-group" data-category="shs">
+                <button type="button" class="subject-category-button" data-category="shs" aria-expanded="false">
+                  <span>Sciences humaines et sociales</span>
+                  <span class="subject-chevron">›</span>
+                </button>
+                <div class="subject-submenu hidden" data-category="shs">
+                  <button type="button" class="subject-option" data-subject="Sociologie" role="treeitem" aria-selected="false">Sociologie</button>
+                  <button type="button" class="subject-option" data-subject="Psychologie" role="treeitem" aria-selected="false">Psychologie</button>
+                  <button type="button" class="subject-option" data-subject="Droit" role="treeitem" aria-selected="false">Droit</button>
+                  <button type="button" class="subject-option" data-subject="Économie" role="treeitem" aria-selected="false">Économie</button>
+                  <button type="button" class="subject-option" data-subject="Science politique" role="treeitem" aria-selected="false">Science politique</button>
+                </div>
+              </div>
+
+              <div class="subject-group" data-category="tech">
+                <button type="button" class="subject-category-button" data-category="tech" aria-expanded="false">
+                  <span>Technologie et Informatique</span>
+                  <span class="subject-chevron">›</span>
+                </button>
+                <div class="subject-submenu hidden" data-category="tech">
+                  <button type="button" class="subject-option" data-subject="Technologie" role="treeitem" aria-selected="false">Technologie</button>
+                  <button type="button" class="subject-option" data-subject="Informatique" role="treeitem" aria-selected="false">Informatique</button>
+                  <button type="button" class="subject-option" data-subject="Programmation" role="treeitem" aria-selected="false">Programmation</button>
+                  <button type="button" class="subject-option" data-subject="Robotique" role="treeitem" aria-selected="false">Robotique</button>
+                  <button type="button" class="subject-option" data-subject="IA" role="treeitem" aria-selected="false">IA</button>
+                  <button type="button" class="subject-option" data-subject="Bureautique" role="treeitem" aria-selected="false">Bureautique</button>
+                </div>
+              </div>
+
+              <div class="subject-group" data-category="entrepreneuriat">
+                <button type="button" class="subject-category-button" data-category="entrepreneuriat" aria-expanded="false">
+                  <span>Entrepreneuriat, Économie et Gestion</span>
+                  <span class="subject-chevron">›</span>
+                </button>
+                <div class="subject-submenu hidden" data-category="entrepreneuriat">
+                  <button type="button" class="subject-option" data-subject="Entrepreneuriat" role="treeitem" aria-selected="false">Entrepreneuriat</button>
+                  <button type="button" class="subject-option" data-subject="Business plan" role="treeitem" aria-selected="false">Business plan</button>
+                  <button type="button" class="subject-option" data-subject="Marketing" role="treeitem" aria-selected="false">Marketing</button>
+                  <button type="button" class="subject-option" data-subject="Comptabilité" role="treeitem" aria-selected="false">Comptabilité</button>
+                  <button type="button" class="subject-option" data-subject="Gestion de projet" role="treeitem" aria-selected="false">Gestion de projet</button>
+                </div>
+              </div>
+
+              <div class="subject-group" data-category="philosophie">
+                <button type="button" class="subject-category-button" data-category="philosophie" aria-expanded="false">
+                  <span>Philosophie et Pensée critique</span>
+                  <span class="subject-chevron">›</span>
+                </button>
+                <div class="subject-submenu hidden" data-category="philosophie">
+                  <button type="button" class="subject-option" data-subject="Philosophie" role="treeitem" aria-selected="false">Philosophie</button>
+                  <button type="button" class="subject-option" data-subject="Logique" role="treeitem" aria-selected="false">Logique</button>
+                  <button type="button" class="subject-option" data-subject="Éthique" role="treeitem" aria-selected="false">Éthique</button>
+                  <button type="button" class="subject-option" data-subject="Argumentation" role="treeitem" aria-selected="false">Argumentation</button>
+                </div>
+              </div>
+
+              <div class="subject-group" data-category="arts">
+                <button type="button" class="subject-category-button" data-category="arts" aria-expanded="false">
+                  <span>Arts et Culture</span>
+                  <span class="subject-chevron">›</span>
+                </button>
+                <div class="subject-submenu hidden" data-category="arts">
+                  <button type="button" class="subject-option" data-subject="Éducation artistique" role="treeitem" aria-selected="false">Éducation artistique</button>
+                  <button type="button" class="subject-option" data-subject="Musique" role="treeitem" aria-selected="false">Musique</button>
+                  <button type="button" class="subject-option" data-subject="Dessin" role="treeitem" aria-selected="false">Dessin</button>
+                  <button type="button" class="subject-option" data-subject="Théâtre" role="treeitem" aria-selected="false">Théâtre</button>
+                  <button type="button" class="subject-option" data-subject="Culture haïtienne" role="treeitem" aria-selected="false">Culture haïtienne</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="compact-field">
+          <label>Aide</label>
+          <div class="mode-dropdown" id="modeDropdown">
+            <input type="hidden" id="mode" value="expliquer" />
+            <button type="button" class="mode-dropdown-trigger" id="modeTrigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="modeMenu">
+              <span id="modeTriggerText">Expliquer</span>
+              <span class="mode-dropdown-arrow">▾</span>
+            </button>
+            <div class="mode-dropdown-menu hidden" id="modeMenu" role="listbox" aria-label="Aide">
+              <button type="button" class="mode-dropdown-option active" data-mode="expliquer" role="option" aria-selected="true">Expliquer</button>
+              <button type="button" class="mode-dropdown-option" data-mode="simplifier" role="option" aria-selected="false">Simplifier</button>
+              <button type="button" class="mode-dropdown-option" data-mode="corriger" role="option" aria-selected="false">Corriger</button>
+              <button type="button" class="mode-dropdown-option" data-mode="quiz" role="option" aria-selected="false">Exercices</button>
+              <button type="button" class="mode-dropdown-option" data-mode="examen" role="option" aria-selected="false">Évaluation</button>
+              <button type="button" class="mode-dropdown-option" data-mode="professeur" role="option" aria-selected="false">Professeur particulier</button>
+            </div>
+          </div>
+        </div>
+        <p id="fileStatus" class="file-status">Aucun fichier importé.</p>
+        <input type="file" id="fileInput" accept=".txt,.md,.csv,.json,.html,.css,.js,.py,.pdf,.docx" onchange="uploadFile()" hidden />
+      </section>
+
+      <section id="chatWindow" class="chat-window"></section>
+    </section>
+  </main>
+
+  <div id="loginModal" class="modal hidden">
+    <div class="modal-box">
+      <button class="close" onclick="closeModal('loginModal')">×</button>
+      <h2>Connexion</h2>
+      <input id="loginEmail" type="email" placeholder="Email" />
+      <input id="loginPassword" type="password" placeholder="Mot de passe" />
+      <button class="btn cyan" onclick="fakeLogin()">Se connecter</button>
+      <p>Pas de compte ? <a onclick="switchModal('loginModal','registerModal')">Créer un compte</a></p>
+      <p><a onclick="switchModal('loginModal','resetModal')">Mot de passe oublié ?</a></p>
+    </div>
+  </div>
+
+  <div id="resetModal" class="modal hidden">
+    <div class="modal-box">
+      <button class="close" onclick="closeModal('resetModal')">×</button>
+      <h2>Réinitialiser le mot de passe</h2>
+      <input type="email" placeholder="Email" />
+      <button class="btn cyan">Envoyer le code</button>
+      <p><a onclick="switchModal('resetModal','loginModal')">Retour à la connexion</a></p>
+    </div>
+  </div>
+
+  <div id="registerModal" class="modal hidden">
+    <div class="modal-box">
+      <button class="close" onclick="closeModal('registerModal')">×</button>
+      <h2>Créer un compte</h2>
+      <input id="regLastName" placeholder="Nom" />
+      <input id="regFirstName" placeholder="Prénom" />
+      <input id="regEmail" type="email" placeholder="Email" />
+      <input id="regPassword" type="password" placeholder="Mot de passe" />
+      <input id="regGradeLevel" placeholder="Niveau scolaire" />
+      <button class="btn cyan" onclick="fakeRegister()">Créer mon compte</button>
+      <p>Vous avez un compte ? <a onclick="switchModal('registerModal','loginModal')">Se connecter</a></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

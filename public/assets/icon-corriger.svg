@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none">
+  <!-- Halo -->
+  <circle cx="40" cy="40" r="36" fill="rgba(66,199,255,0.08)" stroke="rgba(66,199,255,0.18)" stroke-width="1"/>
+  <!-- Personne 1 -->
+  <circle cx="30" cy="30" r="5" stroke="#42c7ff" stroke-width="2" fill="rgba(66,199,255,0.1)"/>
+  <path d="M22 48 C22 38 38 38 38 48" stroke="#42c7ff" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Personne 2 -->
+  <circle cx="50" cy="30" r="5" stroke="#42c7ff" stroke-width="2" fill="rgba(66,199,255,0.1)"/>
+  <path d="M42 48 C42 38 58 38 58 48" stroke="#42c7ff" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Badge validation centré au-dessus -->
+  <circle cx="40" cy="20" r="7" fill="rgba(85,230,157,0.15)" stroke="#55e69d" stroke-width="2"/>
+  <path d="M36.5 20 L39 22.5 L43.5 17.5" stroke="#55e69d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Ligne de connexion -->
+  <line x1="40" y1="27" x2="40" y2="32" stroke="#55e69d" stroke-width="1.5" stroke-dasharray="2 2" stroke-linecap="round"/>
+</svg>
