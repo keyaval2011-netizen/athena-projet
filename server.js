@@ -22,6 +22,7 @@ const dotenvLoaded = Boolean(dotenvResult?.parsed && Object.keys(dotenvResult.pa
 const envFileHasContent = envFileContent.trim().length > 0;
 
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 3000;
 const GROQ_API_KEY = (process.env.GROQ_API_KEY || "").trim();
 const GROQ_MODEL = ((process.env.GROQ_MODEL || "llama-3.3-70b-versatile").trim() || "llama-3.3-70b-versatile");
