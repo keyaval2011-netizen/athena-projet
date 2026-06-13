@@ -629,33 +629,8 @@ function startVoiceDictation() {
     }
     voiceInterim = interimText;
     const currentRecognized = `${voiceTranscript}${voiceInterim}`.trim();
+    lastVoiceDictationRecognized = currentRecognized;
     updateVoicePanel('Dictée en cours...', currentRecognized);
-
-    // Trigger translation with debounce (1500ms)
-    if (currentRecognized && currentRecognized !== lastVoiceDictationRecognized) {
-      lastVoiceDictationRecognized = currentRecognized;
-      
-      // Cancel previous translation timer
-      if (voiceTranslationTimer) {
-        window.clearTimeout(voiceTranslationTimer);
-      }
-
-      // Schedule new translation after 1500ms of stability
-      voiceTranslationTimer = window.setTimeout(async () => {
-        voiceTranslationTimer = null;
-        
-        if (lastVoiceDictationRecognized) {
-          try {
-            const translated = await translateVoiceInputToResponseLanguage(lastVoiceDictationRecognized);
-            if (translated && translated.trim() !== lastVoiceDictationRecognized) {
-              lastVoiceDictationTranslated = translated.trim();
-            }
-          } catch (error) {
-            console.warn('Traduction dictée échouée:', error);
-          }
-        }
-      }, 1500);
-    }
   };
 
   speechRecognizer.onerror = (event) => {
@@ -700,13 +675,15 @@ function cancelVoiceDictation() {
 
 function confirmVoiceDictation() {
   const input = document.getElementById('messageInput');
-  // Use translated text if available, otherwise use original transcript
   const transcript = lastVoiceDictationTranslated || `${voiceTranscript}${voiceInterim}`.trim();
   if (input && transcript) {
     input.value = transcript;
     input.focus();
   }
   cancelVoiceDictation();
+  if (transcript) {
+    sendMessage();
+  }
 }
 
 function startVoiceChat() {
@@ -1133,6 +1110,27 @@ function exitApp() {
   publicSite.classList.remove("hidden");
   topbar.classList.remove("hidden");
   window.scrollTo(0, 0);
+}
+
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  if (!sidebar) return;
+  const isOpen = sidebar.classList.contains('sidebar-open');
+  if (isOpen) {
+    sidebar.classList.remove('sidebar-open');
+    overlay && overlay.classList.add('hidden');
+  } else {
+    sidebar.classList.add('sidebar-open');
+    overlay && overlay.classList.remove('hidden');
+  }
+}
+
+function closeSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  sidebar && sidebar.classList.remove('sidebar-open');
+  overlay && overlay.classList.add('hidden');
 }
 
 function returnToPublicPage(sectionId = "home") {

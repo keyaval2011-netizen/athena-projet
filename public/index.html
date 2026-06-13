@@ -5,6 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ATHENA - Assistant pédagogique intelligent</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Dictée vocale — styles fonctionnels uniquement */
+    .btn-voice-back {
+      background: none;
+      border: none;
+      color: var(--text-secondary, #aaa);
+      font-size: 1.1rem;
+      cursor: pointer;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .btn-voice-back:hover { opacity: 1; }
+    .voice-lang-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.25rem;
+    }
+    .voice-lang-btn { font-size: 0.8rem; padding: 0.25rem 0.6rem; }
+    .voice-translating-label {
+      font-style: italic;
+      font-size: 0.9em;
+      opacity: 0.75;
+    }
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -184,8 +212,13 @@
       </div>
     </aside>
 
+    <div id="sidebarOverlay" class="sidebar-overlay hidden" onclick="closeSidebar()"></div>
+
     <section class="workspace">
       <header class="workspace-header">
+        <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleSidebar()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
         <div class="workspace-actions">
           <button id="logoutBtn" class="btn soft hidden" onclick="logout()">Déconnexion</button>
           <button class="user-chip" onclick="returnToPublicPage('home')">Retour accueil</button>
@@ -224,9 +257,8 @@
       <section id="voicePanel" class="voice-panel hidden">
         <div class="voice-panel-status" id="voiceStatus">Dictée en attente...</div>
         <div class="voice-preview" id="voicePreview"></div>
-        <div class="voice-actions">
+        <div class="voice-actions" id="voiceActions">
           <button type="button" class="btn soft compact" onclick="cancelVoiceDictation()">Annuler</button>
-          <button type="button" class="btn cyan compact" onclick="confirmVoiceDictation()">Valider</button>
         </div>
       </section>
 
